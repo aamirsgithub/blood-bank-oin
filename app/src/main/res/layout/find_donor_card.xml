@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:strokeColor="#D3D3D3">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:gravity="start">
+
+        <!-- Blood Type Section -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="start|center_vertical">
+
+            <!-- Blood Type Icon -->
+            <TextView
+                android:id="@+id/textView_bloodType"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="#490008"
+                android:gravity="center"
+                android:text="AB+"
+                android:textColor="#FFFFFF"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText,TextSizeCheck" />
+
+            <!-- Donor Info Section -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/textView_donorInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Female, 21yr old"
+                    android:textColor="#000000"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText" />
+
+                <TextView
+                    android:id="@+id/textView_donorLocation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="DHA, Lahore | 3 Km"
+                    android:textColor="#666666"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+
+            <!-- Call Icon -->
+            <ImageView
+                android:id="@+id/icon_call"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/call_icon"
+                tools:ignore="ContentDescription" />
+        </LinearLayout>
+
+        <!-- Time Limit Section -->
+        <TextView
+            android:id="@+id/textView_timeLimit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Time Limit: 15/11/2022"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/textView_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Address:"
+            android:textColor="#000000"
+            android:textStyle="italic"
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText" />
+
+        <!-- Request Button -->
+        <Button
+            android:id="@+id/button_request"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:layout_gravity="center"
+            android:text="Request"
+            android:background="@drawable/rounded_button_burgandy"
+            android:textColor="#FFFFFF"
+            android:textSize="14sp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>

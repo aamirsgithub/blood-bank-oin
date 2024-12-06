@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/request_test"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/textView98"
+        android:layout_width="300dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="350dp"
+        android:text="Number of Units you want to donate?"
+        android:textColor="#490008"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/editTextNumberOfUnits"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="50dp"
+        android:hint="Enter number of units"
+        android:inputType="number"
+        android:minHeight="48dp"
+        android:textColor="#000000"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="130dp"
+        android:layout_height="60dp"
+        android:background="@drawable/rounded_button_burgandy"
+        android:text="Submit"
+        android:layout_marginTop="60dp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"/>
+
+</LinearLayout>
