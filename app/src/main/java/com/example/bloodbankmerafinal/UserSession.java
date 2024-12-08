@@ -2,7 +2,7 @@ package com.example.bloodbankmerafinal;
 
 public class UserSession {
     private static UserSession instance;
-    private String userId;
+    private Integer userId;
 
     // Private constructor to prevent instantiation
     private UserSession() {}
@@ -16,12 +16,12 @@ public class UserSession {
     }
 
     // Get userId
-    public String getUserId() {
+    public Integer getUserId() {
         return userId;
     }
 
     // Set userId
-    public void setUserId(String userId) {
+    public void setUserId(Integer userId) {
         this.userId = userId;
     }
 }

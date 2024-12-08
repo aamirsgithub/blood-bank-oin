@@ -85,7 +85,7 @@
                             if (dataSnapshot.exists()) {
                                 for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
                                     String dbPassword = userSnapshot.child("password").getValue(String.class);
-                                    String userID = Objects.requireNonNull(userSnapshot.child("userId").getValue()).toString();
+                                    Integer userID = Integer.parseInt(Objects.requireNonNull(userSnapshot.child("userId").getValue()).toString());
 
                                     if (dbPassword != null && dbPassword.equals(password)) {
                                         // Store userID in UserSession Singleton
