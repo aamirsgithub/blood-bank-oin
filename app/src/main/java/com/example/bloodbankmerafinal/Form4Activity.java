@@ -22,7 +22,7 @@ public class Form4Activity extends AppCompatActivity {
     private Button yesButton, noButton;
     private SharedPreferences sharedPreferences;
     private DatabaseReference databaseReference;
-    private String userId;
+    private Integer userId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,10 +34,9 @@ public class Form4Activity extends AppCompatActivity {
         sharedPreferences = getSharedPreferences("FormAnswers", MODE_PRIVATE);
 
         // Get the current authenticated user ID
-        FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
-        if (user != null) {
-            userId = user.getUid();
-            databaseReference = FirebaseDatabase.getInstance().getReference("users").child(userId);
+        userId = UserSession.getInstance().getUserId() ;
+        if (userId != null) {
+            databaseReference = FirebaseDatabase.getInstance().getReference("users");
         } else {
             Log.e("Form4Activity", "User is not authenticated.");
             return;
