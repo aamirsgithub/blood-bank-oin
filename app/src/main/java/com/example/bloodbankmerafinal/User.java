@@ -7,6 +7,9 @@ public class User implements Parcelable {
     private String name, bloodGroup, phone, email, address, city, unitsNeeded;
 
     // Constructor
+
+    public User() {
+    }
     public User(String name, String bloodGroup, String phone, String email, String address, String city, String unitsNeeded) {
         this.name = name;
         this.bloodGroup = bloodGroup;

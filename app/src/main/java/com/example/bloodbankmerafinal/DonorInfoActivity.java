@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,7 +13,8 @@ public class DonorInfoActivity extends AppCompatActivity {
 
     // Declare UI components
     private EditText nameEditText, bloodGroupEditText, unitsEditText, phoneEditText, emailEditText, addressEditText, cityEditText;
-    private ImageView backIcon;
+
+    private TextView backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +29,7 @@ public class DonorInfoActivity extends AppCompatActivity {
         emailEditText = findViewById(R.id.editText_email);
         addressEditText = findViewById(R.id.editText_address);
         cityEditText = findViewById(R.id.editText_city);
-        backIcon = findViewById(R.id.imageView20); // Ensure the correct ID for the back icon
+        backButton = findViewById(R.id.backButton);
 
         // Retrieve donor data from Intent extras
         String name = getIntent().getStringExtra("NAME");
@@ -51,10 +53,10 @@ public class DonorInfoActivity extends AppCompatActivity {
             Toast.makeText(this, "No donor details available", Toast.LENGTH_SHORT).show();
         }
 
-        // Set back icon functionality
-        backIcon.setOnClickListener(v -> {
-            // Go back to the previous activity
-            finish();
-        });
+
+//        // Redirect to Intro Page
+//        backButton.setOnClickListener(v ->
+//                startActivity(new Intent(DonorInfoActivity.this, FindDonor2.class))
+//        );
     }
 }

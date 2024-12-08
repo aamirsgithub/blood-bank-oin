@@ -26,7 +26,7 @@
 
         private EditText emailField, passwordField;
         private Button loginButton;
-        private TextView forgotPassword, signUpButton;
+        private TextView forgotPassword, signUpButton,backButton;
 
         private DatabaseReference databaseReference;
 
@@ -44,6 +44,7 @@
             loginButton = findViewById(R.id.loginButton);
             forgotPassword = findViewById(R.id.forgotPassword);
             signUpButton = findViewById(R.id.signUpButton);
+            backButton = findViewById(R.id.backButton);
 
             // Handle Login Button Click
             loginButton.setOnClickListener(v -> {
@@ -65,6 +66,11 @@
             // Redirect to Sign-Up Page
             signUpButton.setOnClickListener(v ->
                     startActivity(new Intent(LoginActivity.this, SignUpActivity.class))
+            );
+
+            // Redirect to Intro Page
+            backButton.setOnClickListener(v ->
+                    startActivity(new Intent(LoginActivity.this, IntroActivity.class))
             );
         }
 
@@ -113,22 +119,7 @@
                     });
         }
 
-        private void saveUserIDSession(String userID) {
-            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("USER_ID", userID);
-            editor.apply(); // Save changes
-        }
 
-        private String getUserIDSession() {
-            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-            return sharedPreferences.getString("USER_ID", null); // Returns null if no userID is saved
-        }
 
-        private void clearUserSession() {
-            SharedPreferences sharedPreferences = getSharedPreferences("UserSession", MODE_PRIVATE);
-            SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.remove("USER_ID");
-            editor.apply();
-        }
+
     }

@@ -45,12 +45,11 @@
         android:textStyle="bold" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/infoIcon"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginStart="360dp"
-        android:layout_marginTop="250dp"
-        android:layout_marginBottom="30dp"
+        android:layout_marginStart="340dp"
+        android:layout_marginTop="100dp"
         android:src="@drawable/ic_info" />
 
 

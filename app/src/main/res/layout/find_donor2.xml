@@ -33,12 +33,12 @@
                 android:id="@+id/back"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Back"
-                android:textColor="#FFFFFF"
-                android:textStyle="bold"
-                android:textSize="17sp"
                 android:layout_marginTop="40dp"
-                android:gravity="center_vertical"/>
+                android:gravity="center_vertical"
+                android:text="Back"
+                android:textColor="#490008"
+                android:textSize="17sp"
+                android:textStyle="bold" />
         </LinearLayout>
 
 

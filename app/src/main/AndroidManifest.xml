@@ -25,6 +25,7 @@
 
         <!-- Login Activity -->
         <activity android:name=".LoginActivity"></activity>
+        <activity android:name=".AboutUsActivity"></activity>
 
         <!-- Sign-Up Activity -->
         <activity
@@ -61,6 +62,17 @@
         <activity android:name=".NotificationsActivity" />
         <activity android:name=".DonationHistoryActivity" />
         <activity android:name=".RequestActivity" />
+
+        <activity android:name=".RequestAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".Request"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".MyRequestsFragment"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".NotificationsPagerAdapter"
+            tools:ignore="Instantiatable" />
+        <activity android:name=".ReceivedRequestsFragment"
+            tools:ignore="Instantiatable" />
 
 
     </application>

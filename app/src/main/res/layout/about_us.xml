@@ -4,20 +4,11 @@
     android:layout_height="match_parent"
     android:background="#FFFFFF">
 
-    <!-- Scrollable Content -->
-    <ScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_above="@+id/backButton"
-        android:padding="16dp">
-
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <!-- App Logo -->
             <ImageView
                 android:id="@+id/logoImage"
                 android:layout_width="120dp"
@@ -25,24 +16,26 @@
                 android:layout_gravity="center"
                 android:src="@drawable/logo" />
 
-            <!-- Title -->
             <TextView
                 android:id="@+id/aboutTitle"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:text="About Us"
                 android:textColor="#490008"
                 android:textSize="24sp"
                 android:textStyle="bold"
                 android:gravity="start" />
 
-            <!-- Description -->
             <TextView
                 android:id="@+id/aboutDescription"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="450dp"
                 android:layout_marginTop="12dp"
+                android:layout_marginStart="30dp"
+                android:layout_marginEnd="30dp"
                 android:text="Save-A-Beat is a dedicated blood donation platform aimed at simplifying and enhancing blood donor-recipient connections. Designed for Android devices, the app allows users to create profiles, browse potential donors, and communicate directly, making the process of finding blood in urgent situations faster and easier.\n\nSave-A-Beat goes beyond just a matching service; it integrates a range of features to support a responsive blood donation network. From real-time donor searches by blood type to requesting to be registered as a donor, the app fosters a collaborative environment for life-saving connections. Whether you’re a donor or someone in need, Save-A-Beat provides an intuitive and efficient solution for all."
                 android:textColor="#490008"
                 android:textSize="16sp"
@@ -51,17 +44,18 @@
 
 
         </LinearLayout>
-    </ScrollView>
 
-    <!-- Back Button -->
-    <Button
+    <TextView
         android:id="@+id/backButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_margin="16dp"
-        android:background="@drawable/rounded_button_burgandy"
+        android:layout_width="62dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="320dp"
+        android:layout_marginTop="650dp"
+        android:layout_marginEnd="30dp"
         android:text="Back"
-        android:textColor="#FFFFFF" />
+        android:textColor="#490008"
+        android:textSize="20sp"
+        android:textStyle="bold" />
+
+
 </RelativeLayout>

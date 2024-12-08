@@ -8,6 +8,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,6 +36,8 @@ public class SignUpActivity extends AppCompatActivity {
 
     private EditText nameField, emailField, phoneField, cityField, bloodGroupField, addressField, passwordField, confirmPasswordField;
     private Button signUpButton;
+
+    private TextView backButton,textView6;
     private com.google.android.gms.common.SignInButton googleSignUpButton;
     private FirebaseAuth firebaseAuth;
     private DatabaseReference databaseReference;
@@ -61,6 +64,8 @@ public class SignUpActivity extends AppCompatActivity {
         confirmPasswordField = findViewById(R.id.editTextText4);
         signUpButton = findViewById(R.id.button);
         googleSignUpButton = findViewById(R.id.googleSignInButton);
+        backButton = findViewById(R.id.backButton);
+        textView6 = findViewById(R.id.textView6);
 
         // Set up Google Sign-In options
         GoogleSignInOptions googleSignInOptions = new GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
@@ -87,6 +92,16 @@ public class SignUpActivity extends AppCompatActivity {
                 signInWithGoogle();
             }
         });
+
+        // Redirect to Intro Page
+        backButton.setOnClickListener(v ->
+                startActivity(new Intent(SignUpActivity.this, IntroActivity.class))
+        );
+
+        // Redirect to login Page
+        textView6.setOnClickListener(v ->
+                startActivity(new Intent(SignUpActivity.this, LoginActivity.class))
+        );
     }
 
     private void loadUserIdCounter() {

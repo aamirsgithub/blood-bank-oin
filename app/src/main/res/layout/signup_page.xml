@@ -12,12 +12,24 @@
         android:padding="16dp">
 
         <TextView
+            android:id="@+id/backButton"
+            android:layout_width="74dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="275dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="30dp"
+            android:text="Back"
+            android:textColor="#490008"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
             android:id="@+id/textView"
             android:layout_width="332dp"
             android:layout_height="wrap_content"
             android:text="@string/create_account"
             android:layout_marginStart="20dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="40dp"
             android:padding="10dp"
             android:textStyle="bold"
             android:textSize="24sp"
@@ -250,6 +262,8 @@
             android:text="@string/already_have_account"
             android:textColor="@android:color/darker_gray"
             android:textStyle="bold" />
+
+
 
     </LinearLayout>
 </ScrollView>

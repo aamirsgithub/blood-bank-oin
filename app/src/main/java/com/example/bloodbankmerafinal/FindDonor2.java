@@ -58,7 +58,7 @@ public class FindDonor2 extends AppCompatActivity {
             populateDonorDetails(currentDonorIndex); // Populate the first donor
         } else {
             Log.e("FindDonor2", "No donor data received");
-            Toast.makeText(this, "No donor data available", Toast.LENGTH_SHORT).show();
+//            Toast.makeText(this, "No donor data available", Toast.LENGTH_SHORT).show();
             return;
         }
 

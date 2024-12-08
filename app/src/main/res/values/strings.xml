@@ -62,6 +62,9 @@
     <string name="content_description_profile_pic">User profile picture</string>
     <string name="content_description_logout_icon">Logout icon</string>
 
+    <string name="default_web_client_id">YOUR_WEB_CLIENT_ID_HERE</string>
+
+
 
     <string name="title_donation_history">Donation History</string>
     <string name="subtitle_donation_history">Your complete Donation History</string>

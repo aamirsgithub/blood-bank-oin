@@ -24,4 +24,12 @@ public class UserSession {
     public void setUserId(Integer userId) {
         this.userId = userId;
     }
+
+    public void clearSession() {
+
+    }
+
+    public void clearUserSession() {
+
+    }
 }

@@ -6,6 +6,7 @@ import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -28,6 +29,8 @@ public class FindDonorActivity extends AppCompatActivity {
     private EditText cityEditText;
     private Button searchButton;
 
+    private TextView backButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +40,7 @@ public class FindDonorActivity extends AppCompatActivity {
         bloodGroupSpinner = findViewById(R.id.spinner_blood_group);
         cityEditText = findViewById(R.id.edit_text_location);
         searchButton = findViewById(R.id.button_search);
+        backButton = findViewById(R.id.backButton);
 
         // Populate the spinner with blood group options
         String[] bloodGroups = {"A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-"};
@@ -55,6 +59,11 @@ public class FindDonorActivity extends AppCompatActivity {
                 searchDonors(selectedBloodGroup, city);
             }
         });
+
+        // Redirect to Home Page
+        backButton.setOnClickListener(v ->
+                startActivity(new Intent(FindDonorActivity.this, HomeActivity.class))
+        );
     }
 
     private void searchDonors(String bloodGroup, String city) {
