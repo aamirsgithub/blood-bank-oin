@@ -39,7 +39,7 @@ public class FindDonor2 extends AppCompatActivity {
         initializeUI();
 
         // Retrieve the global userId from UserSession
-        String currentUserId = UserSession.getInstance().getUserId();  // Get userId from UserSession
+        Integer currentUserId = UserSession.getInstance().getUserId();  // Get userId from UserSession
         if (currentUserId != null) {
             Log.d("FindDonor2", "Current User ID: " + currentUserId);
         } else {
@@ -149,7 +149,7 @@ public class FindDonor2 extends AppCompatActivity {
         startActivity(donorInfoIntent);
     }
 
-    private void sendRequestToFirebase(String requesterId, String donorId) {
+    private void sendRequestToFirebase(Integer requesterId, String donorId) {
         DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference("requests");
 
         // Prepare request data

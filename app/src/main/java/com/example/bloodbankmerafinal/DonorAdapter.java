@@ -108,7 +108,7 @@ public class DonorAdapter extends RecyclerView.Adapter<DonorAdapter.DonorViewHol
     // Method to send request to Firebase with the donorId
     private void sendRequestToFirebase(String donorId, DonorViewHolder holder) {
         // Get the current userId from the session
-        String currentUserId = UserSession.getInstance().getUserId();
+        Integer currentUserId = UserSession.getInstance().getUserId();
 
         if (currentUserId == null) {
             Log.e("Firebase", "No user logged in. Cannot send request.");

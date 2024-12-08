@@ -15,6 +15,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import android.util.Log;
 
 public class UserProfileActivity extends AppCompatActivity {
 
@@ -43,17 +44,25 @@ public class UserProfileActivity extends AppCompatActivity {
     }
 
     private void fetchUserProfileData() {
-        String userId = "USER_ID"; // Replace with actual user ID logic
-        databaseReference.child(userId).addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                if (snapshot.exists()) {
-                    etName.setText(snapshot.child("name").getValue(String.class));
-                    etEmail.setText(snapshot.child("email").getValue(String.class));
-                    etCity.setText(snapshot.child("city").getValue(String.class));
-                    etPhoneNumber.setText(snapshot.child("phone").getValue(String.class));
-                    etBloodGroup.setText(snapshot.child("bloodGroup").getValue(String.class));
-                    etAddress.setText(snapshot.child("address").getValue(String.class));
+        Integer userId = UserSession.getInstance().getUserId();
+        Log.d("UserProfile", "User ID: " + userId); // Check if User ID is being retrieved
+
+        if (userId == null) {
+            Toast.makeText(UserProfileActivity.this, "No user logged in", Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        databaseReference.orderByChild("userId").equalTo(userId)
+                .addListenerForSingleValueEvent(new com.google.firebase.database.ValueEventListener() {            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    DataSnapshot userSnapshot = dataSnapshot.getChildren().iterator().next(); // Get the first (and only) match
+                    etName.setText(userSnapshot.child("name").getValue(String.class));
+                    etEmail.setText(userSnapshot.child("email").getValue(String.class));
+                    etCity.setText(userSnapshot.child("city").getValue(String.class));
+                    etPhoneNumber.setText(userSnapshot.child("phone").getValue(String.class));
+                    etBloodGroup.setText(userSnapshot.child("bloodGroup").getValue(String.class));
+                    etAddress.setText(userSnapshot.child("address").getValue(String.class));
                 } else {
                     Toast.makeText(UserProfileActivity.this, "User data not found", Toast.LENGTH_SHORT).show();
                 }
@@ -65,4 +74,5 @@ public class UserProfileActivity extends AppCompatActivity {
             }
         });
     }
+
 }
